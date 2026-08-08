@@ -22,8 +22,11 @@ jobs:
       - name: Generar carpeta android si no existe
         run: |
           if [ ! -d "android" ]; then
-            flutter create --platforms=android --org com.nicool .
+            flutter create --platforms=android --project-name ticketera_cambio --org com.nicool .
           fi
+
+      - name: Actualizar versión de Kotlin
+        run: sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
 
       - name: Aplicar AndroidManifest con permisos Bluetooth
         run: cp android_template/AndroidManifest.xml android/app/src/main/AndroidManifest.xml

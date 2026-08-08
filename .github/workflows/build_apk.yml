@@ -26,7 +26,7 @@ jobs:
           fi
 
       - name: Actualizar versión de Kotlin
-        run: sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "2.1.0"/' android/settings.gradle
+        run: sed -i 's/id "org.jetbrains.kotlin.android" version "[^"]*"/id "org.jetbrains.kotlin.android" version "1.9.24"/' android/settings.gradle
 
       - name: Aplicar AndroidManifest con permisos Bluetooth
         run: cp android_template/AndroidManifest.xml android/app/src/main/AndroidManifest.xml

@@ -22,7 +22,7 @@ jobs:
       - name: Generar carpeta android si no existe
         run: |
           if [ ! -d "android" ]; then
-            flutter create --platforms=android --org com.nicool .
+            flutter create --platforms=android --project-name ticketera_cambio --org com.nicool .
           fi
 
       - name: Aplicar AndroidManifest con permisos Bluetooth
